@@ -299,7 +299,7 @@ def display_gradcam_result(model, last_conv_name, last_layer_name, img_path):
     plt.imshow(cv2.cvtColor(heatmap_img, cv2.COLOR_BGR2RGB))
     plt.title(title_text)
     plt.axis("off")
-    plt.show()
+    #plt.show()
 
 
 def combined_generator(generator1, generator2):
@@ -537,12 +537,12 @@ def display_saliency_result(model, img_path, target_class_index=None):
     class_label = f"Klasa: {out} (Pewność: {confidence:.2f}%)"
 
     # Wyświetlenie obrazu z mapą uwag
-    plt.figure(figsize=(8, 8))
-    plt.imshow(original_img)
-    plt.imshow(saliency_map, cmap="hot", alpha=0.5)  # Nakładanie mapy uwag
-    plt.title(class_label)
-    plt.axis("off")
-    plt.show()
+    # plt.figure(figsize=(8, 8))
+    # plt.imshow(original_img)
+    # plt.imshow(saliency_map, cmap="hot", alpha=0.5)  # Nakładanie mapy uwag
+    # plt.title(class_label)
+    # plt.axis("off")
+    #plt.show()
     return predicted_class, confidence, saliency_map
 
 
