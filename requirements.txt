@@ -5,7 +5,10 @@ flask-upload==1.4.0
 flask-wtf==1.2.2
 wtforms==3.2.1
 opencv-python==4.10.0.84
+Jinja2==3.1.4
 pandas==2.2.3
+pdfkit==1.0.0
+WTForms==3.2.1
 numpy==2.0.2
 matplotlib==3.9.2
 pytest==8.3.4
