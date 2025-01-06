@@ -74,7 +74,7 @@ brew install --cask wkhtmltopdf
 
 #### Windows:
 
-1. Pobierz instalator `wkhtmltopdf` ze strony: [https://wkhtmltopdf.org](https://wkhtmltopdf.org).
+1. Pobierz instalator `wkhtmltopdf` ze strony: [https://wkhtmltopdf.org/downloads.html](https://wkhtmltopdf.org/downloads.html).
 2. Zainstaluj narzędzie, postępując zgodnie z instrukcjami na ekranie.
 3. Zanotuj ścieżkę instalacji, np. `C:\Program Files\wkhtmltopdf`.
 4. Dodaj ścieżkę `bin` z katalogu instalacyjnego do zmiennej środowiskowej `PATH`:
