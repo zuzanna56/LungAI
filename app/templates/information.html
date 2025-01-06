@@ -1,0 +1,30 @@
+{% extends 'base.html' %} {% block custom_css %}<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/information.css') }}"
+/>
+{% endblock %} {% block head %}
+<title>Informacje o projekcie</title>
+{% endblock %} {% block body %}
+<main class="main-container">
+  <div class="main-text">
+    Zapalenie płuc jest poważnym stanem chorobowym, który atakuje układ
+    oddechowy, prowadząc do zapalenia pęcherzyków płucnych, często wywołanego
+    przez bakterie, wirusy lub grzyby. Choroba ta stanowi istotne zagrożenie
+    zdrowotne, szczególnie w regionach o ograniczonym dostępie do opieki
+    medycznej, a jej wczesne wykrycie jest kluczowe w zapobieganiu powikłaniom i
+    zgonom. Tradycyjne metody diagnostyczne, takie jak badanie rentgenowskie
+    płuc, są często stosowane w celu identyfikacji zapalenia płuc, jednak ich
+    interpretacja może być subiektywna i zależna od doświadczenia radiologa. W
+    odpowiedzi na te wyzwania, celem niniejszego projektu inżynierskiego jest
+    stworzenie aplikacji, która przy pomocy algorytmów uczenia maszynowego
+    automatycznie analizuje zdjęcia rentgenowskie płuc, klasyfikując je jako
+    przedstawiające zapalenie płuc lub zdrowe płuca.
+  </div>
+  <div class="main-image">
+    <img
+      src="{{ url_for('static', filename='images/politechnika.png') }}"
+      alt="Politechnika"
+    />
+  </div>
+</main>
+{% endblock %}

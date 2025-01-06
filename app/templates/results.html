@@ -1,0 +1,79 @@
+{% extends 'base.html' %} {% block custom_css %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/results.css') }}"
+/>
+{% endblock %} {% block head %}
+<title>Rezultaty Predykcji</title>
+{% endblock %} {% block body %}
+<main>
+  <div class="main-container">
+    <h1>Rezultaty Predykcji</h1>
+    <h2>
+      Klasyfikacja:
+      <div class="result-text">{{ class_label }}</div>
+    </h2>
+    <h2>
+      Prawdopodobieństwo:
+      <div class="result-text">{{ confidence }}%</div>
+    </h2>
+    {% if class_label == 'chory' %}
+    <h2>
+      Raport szczegółowy:
+      <a
+        href="{{ url_for('generate_report', filename=filename, heatmap_filename=heatmap_filename, class_label=class_label, confidence=confidence) }}"
+        target="_blank"
+      >
+        <button class="raport-gen">generuj</button>
+      </a>
+    </h2>
+    <div class="images">
+      <div class="uploaded-image">
+        <img
+          src="{{ url_for('get_file', filename=filename) }}"
+          alt="Uploaded Image"
+          style="max-width: 400px"
+        />
+        <a
+          href="{{ url_for('get_file', filename=filename) }}"
+          download="{{ filename }}"
+        >
+          <button class="download-button">Pobierz</button>
+        </a>
+      </div>
+
+      <div class="heatmap-image">
+        <img
+          src="{{ url_for('get_processed_file', filename=heatmap_filename) }}"
+          alt="Heatmap"
+          style="max-width: 400px"
+        />
+        <a
+          href="{{ url_for('get_processed_file', filename=heatmap_filename) }}"
+          download="{{ heatmap_filename }}"
+        >
+          <button class="download-button">Pobierz</button>
+        </a>
+      </div>
+    </div>
+    {% else %}
+    <div class="images">
+      <div class="uploaded-image">
+        <img
+          src="{{ url_for('get_file', filename=filename) }}"
+          alt="Uploaded Image"
+          style="max-width: 400px"
+        />
+        <a
+          href="{{ url_for('get_file', filename=filename) }}"
+          download="{{ filename }}"
+        >
+          <button class="download-button">Pobierz</button>
+        </a>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+</main>
+
+{% endblock %}

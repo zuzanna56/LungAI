@@ -1,0 +1,132 @@
+/* Resetowanie marginesów i wypełnień dla podstawowych elementów */
+body,
+html,
+h1,
+form,
+div {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Zapewnia, że padding i border nie wpływają na szerokość elementów */
+}
+
+/* Styl dla body */
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom, #c4c4f4, #a8a8ff); /* Gradient tła */
+  color: #000;
+  height: auto; /* Pozwolenie na przewijanie */
+}
+
+/* Styl dla nagłówka, który jest przyklejony do góry */
+.header {
+  top: 0;
+  position: fixed; /* Nagłówek przyklejony do góry */
+  text-align: left;
+  width: 100%;
+  height: 60px;
+  font-weight: bold;
+  background: rgba(145, 147, 251, 1); /* Kolor tła nagłówka */
+  transition: 0.3s; /* Płynne przejście przy zmianach */
+  padding: 20px;
+  z-index: 1000; /* Nagłówek na wierzchu */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Dodanie cienia */
+}
+
+/* Główna zawartość strony */
+.main-container {
+  margin-top: 60px; /* Odstęp od góry, aby nie nachodziło na nagłówek */
+  padding: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 800px; /* Ograniczenie szerokości dla lepszej czytelności */
+}
+
+/* Stylizacja nagłówków */
+main h1 {
+  font-size: 24px;
+  margin-bottom: 30px;
+  color: #000;
+  text-align: center; /* Wyśrodkowanie tekstu */
+}
+
+/* Stylizacja nagłówka z podtytułem */
+h2 {
+  display: flex; /* Użycie flexbox do wyświetlania w jednej linii */
+  align-items: center;
+  gap: 10px; /* Odstęp między nagłówkiem a tekstem */
+  font-size: 18px;
+}
+
+/* Wygląd tekstu w wynikach */
+.result-text {
+  font-weight: normal;
+  display: inline-block; /* Utrzymanie tekstu na jednej linii */
+}
+
+/* Kontener dla obrazów */
+.images {
+  display: flex;
+  justify-content: center; /* Wyśrodkowanie obrazów */
+  align-items: center;
+  gap: 20px; /* Odstęp między obrazami */
+  margin-top: 20px;
+}
+
+/* Styl dla obrazów, aby były wyrównane i miały stałe wymiary */
+.uploaded-image img,
+.heatmap-image img {
+  width: 400px; /* Stała szerokość obrazów */
+  height: 400px; /* Stała wysokość obrazów */
+  object-fit: cover; /* Zachowanie proporcji obrazu */
+  display: block;
+  border: 2px solid #000000; /* Opcjonalna ramka wokół obrazów */
+  border-radius: 2px; /* Zaokrąglenie rogów */
+}
+
+/* Styl przycisku generującego raport */
+.raport-gen {
+  display: inline-block;
+  background-color: rgb(128, 132, 249); /* Kolor tła przycisku */
+  border: 1px solid rgb(80, 79, 81);
+  font-size: 16px;
+  padding: 10px 40px;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease; /* Płynna animacja */
+}
+
+/* Efekt hover na przycisku generowania raportu */
+.raport-gen:hover {
+  background-color: rgb(128, 132, 249);
+  box-shadow: 0 3px #500eb3;
+  transform: translateY(-2px); /* Delikatne uniesienie przycisku */
+}
+
+/* Kontener obrazów i przycisków */
+.uploaded-image,
+.heatmap-image {
+  display: flex;
+  flex-direction: column; /* Kolumnowe ułożenie elementów */
+  align-items: center;
+  gap: 10px; /* Odstęp między obrazami a przyciskami */
+}
+
+/* Styl dla przycisku pobierania */
+.download-button {
+  display: inline-block;
+  padding: 10px 15px;
+  background-color: #626364; /* Kolor tła przycisku */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Efekt hover na przycisku pobierania */
+.download-button:hover {
+  background-color: #626364;
+  box-shadow: 0 3px #500eb3;
+  transform: translateY(-2px); /* Delikatne uniesienie przycisku */
+}

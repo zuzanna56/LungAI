@@ -1,0 +1,42 @@
+{% extends 'base.html' %} {% block custom_css %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/index.css') }}"
+/>
+{% endblock %} {% block head %}
+<title>LungAI</title>
+{% endblock %} {% block body %}
+<main>
+  <div id="main-page-text"><h1>Analizuj zdjęcie rentgenowskie</h1></div>
+  <form method="post" enctype="multipart/form-data" id="upload-form">
+    {{ form.hidden_tag() }}
+    <div class="form-group">
+      {% for error in form.image.errors %}
+      <span class="error">{{ error }}</span>
+      {% endfor %}
+      <div class="input class container">
+        <div class="row">
+          <div class="col custom-file-container">
+            {{ form.image(class="custom-file-input", id="file-upload") }}
+            <label for="file-upload" class="custom-file-label"
+              >wybierz plik</label
+            >
+          </div>
+
+          <div class="col">{{ form.submit(class="btn btn-primary") }}</div>
+        </div>
+        <span
+          id="file-name-display"
+          style="margin-top: 5px; display: block; font-size: 14px; color: #333"
+        ></span>
+      </div>
+    </div>
+  </form>
+  <div id="loading-spinner" style="display: none">
+    <img
+      src="{{ url_for('static', filename='images/loading.gif') }}"
+      alt="Loading..."
+    />
+  </div>
+</main>
+{% endblock %}

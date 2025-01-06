@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+      }
+      .page {
+        page-break-after: always;
+        text-align: center;
+        padding: 20px;
+      }
+      .page:last-child {
+        page-break-after: auto;
+      }
+      .banner {
+        font-size: 48px;
+        font-weight: bold;
+        color: #ffffff;
+        background-color: #007bff;
+        padding: 20px;
+        border-radius: 5px;
+        margin: 50px auto;
+        display: inline-block;
+      }
+      .title {
+        font-size: 32px;
+        margin: 20px 0;
+      }
+      .subtitle {
+        font-size: 24px;
+        margin: 10px 0;
+        color: #555555;
+      }
+      .image-container {
+        margin: 20px 0;
+      }
+      .image-container img {
+        width: 80%; /* Adjusted to explicitly set 80% width */
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      h2 {
+        font-size: 28px;
+        margin: 40px 0 20px;
+        color: #333333;
+      }
+    </style>
+    <title>Raport szczegółowy</title>
+  </head>
+  <body>
+    <!-- First Page -->
+    <div class="page">
+      <div class="banner">LungAI</div>
+      <div class="title">Raport szczegółowy</div>
+      <div class="subtitle">Plik: {{ filename }}</div>
+      <div class="subtitle">
+        Prawdopodobieńtwo zapalenia płuc: <bold>{{ content.confidence }}</bold> 
+      </div>
+      <div class="image-container">
+        <img src="{{ content.original }}" alt="Original Image" />
+      </div>
+    </div>
+
+    <!-- Second Page -->
+    <div class="page">
+      <h2>GradCAM Heatmap</h2>
+      <div class="image-container">
+        <img src="{{ content.heatmap }}" alt="GradCAM Heatmap" />
+      </div>
+    </div>
+
+    <!-- Third Page -->
+    <div class="page">
+      <h2>Integrated Gradient Heatmap</h2>
+      <div class="image-container">
+        <img
+          src="{{ content.int_grad_heatmap }}"
+          alt="Integrated Gradient Heatmap"
+        />
+      </div>
+    </div>
+
+    <!-- Fourth Page -->
+    <div class="page">
+      <h2>Saliency Heatmap</h2>
+      <div class="image-container">
+        <img src="{{ content.saliency_heatmap }}" alt="Saliency Heatmap" />
+      </div>
+    </div>
+  </body>
+</html>
