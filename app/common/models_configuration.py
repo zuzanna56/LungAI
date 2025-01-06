@@ -44,7 +44,7 @@ BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 # Konfiguracja modelu
 
 model_config = {
-    "path": "models/chexnet_combined.keras",
+    "path": "model/chexnet_combined.keras",
     "last_conv_name": "conv5_block16_2_conv",
     "last_layer_name": "dense",
     "model_name": "model_1",
