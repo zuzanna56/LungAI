@@ -12,7 +12,7 @@ div {
 /* Stylizacja dla ciała strony */
 body {
   font-family: Arial, sans-serif;
-  background: linear-gradient(to bottom, #c4c4f4, #a8a8ff); /* Gradient tła */
+  background: white; 
   color: #000;
   display: flex;
   justify-content: center; /* Wyśrodkowanie zawartości w poziomie */
@@ -63,23 +63,19 @@ form {
 /* Styl dla pól formularza */
 .form-control {
   padding: 10px;
-  border: 2px solid rgb(99, 24, 153);
+  border: 2px solid rgb(191, 213, 226);
   border-radius: 5px;
   font-size: 16px;
   width: 250px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Cień wokół pola */
-  background: linear-gradient(
-    to left,
-    rgba(238, 207, 253, 1),
-    rgba(155, 78, 222, 1)
-  ); /* Gradient w tle */
+  background: rgb(229, 234, 239); 
 }
 
 /* Stylizacja pola formularza po kliknięciu */
 .form-control:focus {
-  border-color: #8a2be2; /* Zmiana koloru obramowania */
+  border-color: rgb(44, 73, 111); /* Zmiana koloru obramowania */
   outline: none; /* Usunięcie obramowania focus */
-  box-shadow: 0 2px 8px rgba(138, 43, 226, 0.5); /* Cień przy fokusu */
+  box-shadow: 0 2px 8px rgb(0, 112, 144); /* Cień przy fokusu */
 }
 
 /* Stylizacja przycisków */
@@ -98,18 +94,14 @@ form {
 
 /* Stylizacja przycisku typu primary */
 .btn-primary {
-  background: linear-gradient(
-    to right,
-    rgba(238, 207, 253, 1),
-    rgba(155, 78, 222, 1)
-  );
-  border: 2px solid rgb(99, 24, 153);
+  background: rgb(229, 234, 239);
+  border: 4px solid rgb(191, 213, 226);
 }
 
 /* Efekt hover na przycisku */
 .btn-primary:hover {
-  background-color: #5f28c5; /* Zmiana koloru tła */
-  box-shadow: 0 3px #500eb3;
+  
+  box-shadow: 0 3px rgb(132, 155, 209);
   transform: translateY(-2px); /* Uniesienie przycisku */
 }
 
@@ -137,12 +129,8 @@ form {
 /* Styl dla niestandardowego przycisku wyboru pliku */
 .custom-file-label {
   display: inline-block;
-  background: linear-gradient(
-    to left,
-    rgba(238, 207, 253, 1),
-    rgba(155, 78, 222, 1)
-  );
-  border: 2px solid rgb(99, 24, 153);
+  background: rgb(229, 234, 239);
+  border: 4px solid rgb(191, 213, 226);
   font-size: 16px;
   padding: 12px 30px;
   border-radius: 5px;
@@ -156,8 +144,8 @@ form {
 
 /* Efekt hover na niestandardowym przycisku */
 .custom-file-container:hover {
-  background-color: #5f28c5;
-  box-shadow: 0 3px #500eb3;
+  
+  box-shadow: 0 3px rgb(132, 155, 209);
   transform: translateY(-2px); /* Uniesienie przycisku */
 }
 

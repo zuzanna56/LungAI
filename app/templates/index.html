@@ -7,6 +7,7 @@
 <title>LungAI</title>
 {% endblock %} {% block body %}
 <main>
+  <div class="main-box">
   <div id="main-page-text"><h1>Analizuj zdjęcie rentgenowskie</h1></div>
   <form method="post" enctype="multipart/form-data" id="upload-form">
     {{ form.hidden_tag() }}
@@ -37,6 +38,7 @@
       src="{{ url_for('static', filename='images/loading.gif') }}"
       alt="Loading..."
     />
+  </div>
   </div>
 </main>
 {% endblock %}

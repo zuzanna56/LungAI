@@ -3,7 +3,11 @@ import os
 import re
 
 import cv2
+import matplotlib
+matplotlib.use("Agg")  # Ustawienie backendu na "Agg" przed importem matplotlib.pyplot
+
 import matplotlib.pyplot as plt
+
 import pdfkit
 from flask import (Flask, make_response, redirect, render_template, request,
                    send_from_directory, session, url_for)
