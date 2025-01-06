@@ -1,8 +1,9 @@
 tensorflow==2.18.0
 scikit-learn==1.5.2
-flask==3.0.3
-flask-upload==1.4.0
-flask-wtf==1.2.2
+Flask==3.0.3
+Flask-Reuploaded==1.4.0
+Flask-Testing==0.8.1
+Flask-WTF==1.2.2
 wtforms==3.2.1
 opencv-python==4.10.0.84
 Jinja2==3.1.4
