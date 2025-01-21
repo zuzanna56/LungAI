@@ -16,7 +16,7 @@ from flask_wtf import FlaskForm
 from flask_wtf.file import FileAllowed, FileField, FileRequired
 from wtforms import SubmitField
 
-from app.common.models_configuration import MODEL, clear_directory
+from app.common.model_configuration import MODEL, clear_directory
 from app.common.xray_functions import (display_integrated_griadients,
                                        get_gradcam_heatmap, get_saliency_map)
 
