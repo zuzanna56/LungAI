@@ -1,46 +1,41 @@
-/* Stylizacja nagłówka, który jest przypięty do góry strony */
 .header {
   top: 0;
   position: fixed;
-  display: flex; /* Flexbox for alignment */
-  align-items: center; /* Center items vertically */
-  justify-content: flex-start; /* Align content to the start */
+  display: flex; 
+  align-items: center; 
+  justify-content: flex-start; 
   width: 100%;
   height: 60px;
   font-weight: bold;
   background:rgb(191, 213, 226);
   transition: 0.3s;
-  padding: 0 20px; /* Padding on left and right */
-  z-index: 1000; /* Ustawienie nagłówka ponad inne elementy */
+  padding: 0 20px; 
+  z-index: 1000;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Stylizacja samego elementu header */
 header {
   display: flex;
-  align-items: center; /* Center items vertically */
-  gap: 10px; /* Small gap between logo and info icon */
+  align-items: center; 
+  gap: 10px;
   background-color: transparent;
 }
 
-/* Stylizacja linku otaczającego logo */
 .logo-link {
-  text-decoration: none; /* Removes underline from the link */
-  color: inherit; /* Inherits text color from the parent element */
-  display: flex; /* Keeps flex properties of the header intact */
-  align-items: center; /* Ensures vertical alignment matches */
+  text-decoration: none; 
+  color: inherit; 
+  display: flex; 
+  align-items: center;
 }
 
-/* Stylizacja logo w nagłówku */
 .logo {
   font-size: 26px;
   font-family: "Kalam", serif;
   font-weight: 700;
   font-style: normal;
-  margin: 0; /* Remove extra margins */
+  margin: 0;
 }
 
-/* Stylizacja ikony informacji */
 .info-icon {
   font-size: 20px;
   font-weight: bold;

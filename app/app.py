@@ -32,7 +32,7 @@ def create_app():
     """
     Tworzy i konfiguruje aplikację Flask.
 
-    Returns:
+    Zwraca:
         Flask: Skonfigurowana instancja aplikacji.
     """
     app = Flask(__name__)
@@ -55,7 +55,7 @@ def create_app():
     # app.config["WTF_CSRF_ENABLED"] = False  # Do testów do wysyłania formularzy
     # ------------------------------------------------------------------------
 
-    # Clearing previously uploaded images
+    # Usuwanie ostatnio przesłanych obrazów
     for dest in IMAGES_DEST.values():
         clear_directory(app.config[dest])
 
@@ -157,7 +157,7 @@ def register_routes(app, images):
 
             match = re.search(
                 r"([^/\\]+)$", form.image.data.filename
-            )  # Matches the last part of the path, used in testing
+            )  
             if match:
                 filename = match.group(1)
             else:
