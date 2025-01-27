@@ -1,4 +1,3 @@
-/* Resetowanie marginesów i wypełnień dla podstawowych elementów */
 body,
 html,
 h1,
@@ -6,106 +5,102 @@ form,
 div {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; /* Zapewnia, że padding i border nie wpływają na szerokość elementów */
+  box-sizing: border-box; 
 }
 
-/* Stylizacja dla ciała strony */
 body {
   font-family: Arial, sans-serif;
   background: white; 
   color: #000;
   display: flex;
-  justify-content: center; /* Wyśrodkowanie zawartości w poziomie */
-  align-items: center; /* Wyśrodkowanie zawartości w pionie */
-  height: 100vh; /* Ustawienie wysokości na pełną wysokość ekranu */
+  justify-content: center; 
+  align-items: center; 
+  height: 100vh; 
 }
 
-/* Styl dla nagłówka głównego */
 main h1 {
   font-size: 30px;
   margin-top: 20px;
   margin-bottom: 30px;
   color: #000;
-  text-align: center; /* Wyśrodkowanie tekstu */
+  text-align: center; 
   font-family: "Jura", serif;
   font-optical-sizing: auto;
   font-weight: 700;
   font-style: normal;
 }
 
-/* Stylizacja formularza */
 form {
-  margin-top: 20px; /* Odstęp od nagłówka */
+  margin-top: 20px; 
 }
 
-/* Grupa formularzy z wyrównaniem elementów w pionie */
 .form-group {
   display: flex;
-  flex-direction: column; /* Ustawienie elementów w kolumnie */
-  align-items: center; /* Wyśrodkowanie elementów */
+  flex-direction: column; 
+  align-items: center; 
 }
 
-/* Styl dla komunikatów o błędach */
+
 .error {
-  color: red; /* Kolor czerwony dla błędów */
+  color: red; 
   font-size: 14px;
-  margin-bottom: 10px; /* Odstęp poniżej */
+  margin-bottom: 10px; 
 }
 
-/* Styl dla wierszy formularza z elastycznym układem */
+
 .row {
   display: flex;
-  gap: 15px; /* Odstęp między elementami */
-  justify-content: center; /* Wyśrodkowanie w poziomie */
+  gap: 15px;
+  justify-content: center; 
   margin-top: 10px;
 }
 
-/* Styl dla pól formularza */
+
 .form-control {
   padding: 10px;
   border: 2px solid rgb(191, 213, 226);
   border-radius: 5px;
   font-size: 16px;
   width: 250px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Cień wokół pola */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
   background: rgb(229, 234, 239); 
 }
 
-/* Stylizacja pola formularza po kliknięciu */
+
 .form-control:focus {
-  border-color: rgb(44, 73, 111); /* Zmiana koloru obramowania */
-  outline: none; /* Usunięcie obramowania focus */
-  box-shadow: 0 2px 8px rgb(0, 112, 144); /* Cień przy fokusu */
+  border-color: rgb(44, 73, 111); 
+  outline: none; 
+  box-shadow: 0 2px 8px rgb(0, 112, 144); 
 }
 
-/* Stylizacja przycisków */
+
 .btn {
   font-size: 16px;
   padding: 12px 30px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: all 0.3s ease; /* Płynne przejście dla efektów */
+  transition: all 0.3s ease; 
   font-family: "Jura", serif;
   font-optical-sizing: auto;
   font-weight: 700;
   font-style: normal;
 }
 
-/* Stylizacja przycisku typu primary */
+
 .btn-primary {
   background: rgb(229, 234, 239);
   border: 4px solid rgb(191, 213, 226);
 }
 
-/* Efekt hover na przycisku */
+
 .btn-primary:hover {
   
   box-shadow: 0 3px rgb(132, 155, 209);
-  transform: translateY(-2px); /* Uniesienie przycisku */
+  transform: translateY(-2px); 
 }
 
-/* Kontener dla niestandardowego pola wyboru pliku */
+
 .custom-file-container {
   position: relative;
   display: inline-block;
@@ -114,19 +109,19 @@ form {
   border-radius: 5px;
 }
 
-/* Ukrycie standardowego pola input dla pliku */
+
 .custom-file-input {
   position: absolute;
   width: 100%;
   height: 100%;
-  opacity: 0; /* Ukrycie pola */
+  opacity: 0; 
   left: 0;
   top: 0;
-  z-index: 1; /* Zapewnienie, że niestandardowy przycisk będzie na wierzchu */
+  z-index: 1; 
   cursor: pointer;
 }
 
-/* Styl dla niestandardowego przycisku wyboru pliku */
+
 .custom-file-label {
   display: inline-block;
   background: rgb(229, 234, 239);
@@ -142,19 +137,18 @@ form {
   font-style: normal;
 }
 
-/* Efekt hover na niestandardowym przycisku */
+
 .custom-file-container:hover {
   
   box-shadow: 0 3px rgb(132, 155, 209);
-  transform: translateY(-2px); /* Uniesienie przycisku */
+  transform: translateY(-2px); 
 }
 
-/* Kontener dla klas wejściowych */
 .input-class-container {
-  display: flex; /* Flexbox do układu */
-  flex-direction: column; /* Układ pionowy */
-  align-items: flex-start; /* Wyrównanie do lewej */
-  gap: 10px; /* Odstęp między elementami */
+  display: flex; 
+  flex-direction: column; 
+  align-items: flex-start;
+  gap: 10px; 
 }
 
 #loading-spinner {

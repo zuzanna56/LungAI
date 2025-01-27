@@ -254,8 +254,8 @@ def get_gradcam_heatmap(
     # Normalizacja mapy ciepła
     heatmap = tf.maximum(heatmap, 0) / tf.math.reduce_max(heatmap)
     heatmap = heatmap.numpy()
-    gamma = 12.0
-    heatmap = np.power(heatmap, gamma)  # Użycie NumPy
+    gamma = 6.5
+    heatmap = np.power(heatmap, gamma)  
     heatmap = heatmap / np.max(heatmap)
     # Nakładanie mapy ciepła na obraz
     heatmap = cv2.resize(heatmap, (img.shape[1], img.shape[0]))
@@ -344,18 +344,14 @@ def compile_model(checkpoint_name):
         metrics=["accuracy", "precision", "recall"],
     )
 
-    # Callbacks
-    # 1. ReduceLROnPlateau to reduce the learning rate when the validation loss plateaus
     reduce_lr = ReduceLROnPlateau(
         monitor="val_loss", factor=0.1, patience=2, min_lr=1e-6, verbose=1
     )
 
-    # 2. EarlyStopping to stop training early if validation loss doesn't improve
     early_stopping = EarlyStopping(
         monitor="val_loss", patience=5, restore_best_weights=True, verbose=1
     )
 
-    # 3. ModelCheckpoint to save the model with the lowest validation loss
     model_checkpoint = ModelCheckpoint(
         f"{checkpoint_name}.keras", monitor="val_loss", save_best_only=True, verbose=1
     )
@@ -546,29 +542,3 @@ def display_saliency_result(model, img_path, target_class_index=None):
     return predicted_class, confidence, saliency_map
 
 
-class CustomDataGenerator(tf.keras.utils.Sequence):
-    """
-    Generator słuzacy do dodania szumu do zdjec
-    """
-
-    def __init__(self, generator, noise_type="gaussian", noise_level=0.05):
-        self.generator = generator
-        self.noise_type = noise_type
-        self.noise_level = noise_level
-
-    def __len__(self):
-        return len(self.generator)
-
-    def __getitem__(self, idx):
-        # Pobranie batcha danych
-        batch_x, batch_y = self.generator[idx]
-        # Dodanie szumu do batcha
-        noisy_batch_x = np.array(
-            [add_noise(x, self.noise_type, self.noise_level) for x in batch_x]
-        )
-        return noisy_batch_x, batch_y
-
-    def __iter__(self):
-        # Definicja iteracji
-        for i in range(len(self)):
-            yield self[i]
